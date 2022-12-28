@@ -58,6 +58,7 @@ function saveSound()
 		$file_name = strtolower(md5(uniqid($text)) . '.mp3');
 		if(file_put_contents($file_name, base64_decode($speech_data)))
 		{
+			//mp3 file convert to wav
 			shell_exec("ffmpeg -i ".$file_name." -ac 1 -ab 128k -ar 8000 -acodec pcm_s16le ".$file_name.".wav");
 			shell_exec("chmod 777 ".$file_name.".wav");
 
