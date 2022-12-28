@@ -5,6 +5,9 @@ Google Cloud Text to Speech
 I created a simple php file to use the Google Cloud Text to Speech service.
 In order to use this file, you need to get an api key from the Google Cloud Console.
 
+chown asterisk:asterisk var/lib/asterisk/agi-bin/yourfile.agi
+
+chmod 777 var/lib/asterisk/agi-bin/yourfile.agi
 
 dos2unix /var/lib/asterisk/agi-bin/yourfile.agi
 
