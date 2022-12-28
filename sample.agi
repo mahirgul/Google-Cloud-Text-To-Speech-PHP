@@ -1,13 +1,21 @@
-
 #!/usr/bin/php
 <?php
-set_time_limit(30);
+ob_implicit_flush(true);
 require('phpagi.php');
+require('googletts.php');
+
 error_reporting(E_ALL);
 
 $agi = new AGI();
+$TTS = new GoogleTTS();
+
 $agi->answer();
+
+$filename = $TTS->getSound('Merhaba yabancılar','your_api_key','tr_TR','tr-TR-Standard-C','/var/lib/asterisk/agi-bin/sounds/');
+
+$agi->get_data($filename,5000,1);
 
 $agi->hangup();
 
-?>  
+
+?>
