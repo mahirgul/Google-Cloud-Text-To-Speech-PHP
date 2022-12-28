@@ -27,8 +27,8 @@ function getSound($text)
                     "text"=>$text
                 ],
                 "voice"=>[
-                    "languageCode"=> "tr-TR",
-                    "name" =>"tr-TR-Wavenet-D"
+                    "languageCode"=> "en-US",
+                    "name" =>"en-US-Wavenet-A"
                 ]
             ];
 
