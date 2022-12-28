@@ -52,7 +52,7 @@ function getSound($text)
 function saveSound()
 {
 	$text ="Hello, How can i help you.";
-	$speech_data = getSound($text);//see method upper
+	$speech_data = getSound($text);
 	if($speech_data) 
 	{
 		$file_name = strtolower(md5(uniqid($text)) . '.mp3');
@@ -61,9 +61,6 @@ function saveSound()
 			return $file_name;
 		}
          }
-
         return null;
-   }
-
-
+}
 ?>
