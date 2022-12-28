@@ -16,7 +16,7 @@ https://console.cloud.google.com/
 https://cloud.google.com/text-to-speech#section-4
 https://cloud.google.com/text-to-speech/docs/voices
 
- | Language | Standard | type | name | 
+ | Language | Voice type | Language code | Voice name | 
  | -------- | -------- | ---- | ---- | 
  | Afrikaans (South Africa) | Standard | af-ZA | af-ZA-Standard-A | 
  | Arabic | Standard | ar-XA | ar-XA-Standard-A | 
