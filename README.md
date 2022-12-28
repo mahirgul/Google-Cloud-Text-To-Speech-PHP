@@ -14,6 +14,7 @@ dos2unix /var/lib/asterisk/agi-bin/yourfile.agi
 https://cloud.google.com/text-to-speech/docs/samples/tts-synthesize-text#tts_synthesize_text-php
 https://console.cloud.google.com/
 https://cloud.google.com/text-to-speech#section-4
+https://cloud.google.com/text-to-speech/docs/voices
 
  | Language | Standard | type | name | 
  | -------- | -------- | ---- | ---- | 
