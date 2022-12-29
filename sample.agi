@@ -11,11 +11,10 @@ $TTS = new GoogleTTS();
 
 $agi->answer();
 
-$filename = $TTS->getSound('Merhaba yabancılar','your_api_key','tr_TR','tr-TR-Standard-C','/var/lib/asterisk/agi-bin/sounds/');
+$filename = $TTS->getSound('Hello, How can i help you','your_api_key','en_Us','en-US-Neural2-A','/var/lib/asterisk/agi-bin/sounds/');
 
 $agi->get_data($filename,5000,1);
 
 $agi->hangup();
-
 
 ?>
