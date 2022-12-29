@@ -4,6 +4,11 @@ class GoogleTTS
 {
 	function getSound($text, $apikey, $lang, $voiceName, $folder)
 	{
+		//if folder is not exist create folder
+		if (!file_exists($folder)) 
+		{
+			mkdir($folder, 0777, true);
+		}
 		//get md5 hash filename
 		$file_name = $folder.strtolower(md5($text));
 		
