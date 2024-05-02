@@ -25,12 +25,8 @@ class GoogleTTS
 			//Create request text
 			$params = [
 				"audioConfig"=>[
-					"audioEncoding"=>"LINEAR16",
-					"pitch"=> "1",
-					"speakingRate"=> "1",
-					"effectsProfileId"=> [
-						"medium-bluetooth-speaker-class-device"
-					]
+					"audioEncoding"=>"ALAW",
+					"sampleRateHertz"=>8000
 				],
 				"input"=>[
 					"text"=>$text
@@ -62,21 +58,9 @@ class GoogleTTS
 			//if curl request getting back the data
 			if($responseDecoded['audioContent'])
 			{
-				$speech_data = $responseDecoded['audioContent'];				
-				
-				if(file_put_contents("$file_name.mp3", base64_decode($speech_data)))
-				{
-					//Decode data and save file
-					//mp3 file convert to wav
-					shell_exec("ffmpeg -i $file_name.mp3 -ac 1 -ab 128k -ar 8000 -acodec pcm_s16le $file_name.wav");
-					//set wav file chmod
-					shell_exec("chmod 777 .$file_name.wav");
-					//delete mp3 file
-					shell_exec("rm $file_name.mp3");
-					//return filename
-					return $file_name;
-				}			
-
+				$fp = fopen("${filename}.wav", 'w');
+        			fwrite($fp,base64_decode($responseDecoded['audioContent']));
+        			fclose($fp);
 			}
 			return null;  
 		}
